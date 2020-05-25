@@ -1,0 +1,18 @@
+.bnt.btn-info,
+.btn.btn-alert,
+.btn.btn-primary,
+.btn.btn-success,
+.btn.btn-warning {
+  border-color: #fff
+}
+
+#gameConteiner {
+  z-index: 10;
+  margin-bottom: 20px;
+  margin-right: 20px
+}
+
+a.btn.sidebtn.btn-lg {
+  width: 270px;
+  margin-bottom: 5px
+}
