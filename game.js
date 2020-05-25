@@ -272,7 +272,7 @@ var fineDelGioco = function()
 var shareOnFacebook = function()
 {
     "use strict";
-    var href = "https://twitter.com/share?" + "url=https://migius.github.io/SquareBox/";
+    var href = "https://www.facebook.com/sharer/sharer.php?" + "u=https://migius.github.io/SquareBox/";
     window.open(href, "Share on Twitter");
 };
 
