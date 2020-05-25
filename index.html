@@ -6,7 +6,7 @@
       <meta charset="utf-8"/>
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
       <meta name="description" content="Sai contare fino a 100? Completa lo SquareBox!"/>
-      <meta name="author" content="migio"/>
+      <meta name="author" content="migius"/>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
       <meta itemprop="name" content="SquareBox!"/>
       <meta itemprop="description" content="Sai contare fino a 100? Completa lo SquareBox!"/>
@@ -25,8 +25,8 @@
       <meta property="og:url" content="https://migius.github.io/SquareBox/"/>
       <meta property="og:image" content="https://migius.github.io/SquareBox/SquareBox_s.png"/>
       <meta property="og:description" content="Sai contare fino a 100? Completa lo SquareBox!"/>
-      <meta property="og:site_name" content="migio"/>
-      <meta property="og:author" content="migio"/>
+      <meta property="og:site_name" content="migius"/>
+      <meta property="og:author" content="migius"/>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <link href="style.css" rel="stylesheet">
    </head>
@@ -53,7 +53,7 @@
          </div>
       </div>
       <nav class="navbar navbar-static-top navbar-dark bg-inverse">
-         <a class="navbar-brand" href=/>migio</a>  
+         <a class="navbar-brand" href=/>migius</a>  
          <ul class="nav navbar-nav" style="float: right;">
             <li class="nav-item" data-lang-selector="it_IT"> <a class="nav-link" href="javascript:setLanguage('it_IT')" >IT</a> </li>
             <li class="nav-item" data-lang-selector="en_US"> <a class="nav-link" href="javascript:setLanguage('en_US')" >EN</a> </li>
@@ -62,16 +62,16 @@
          </ul>
       </nav>
       <div class="jumbotron">
-         <div class="container col-md-6">
-            <h1 class="display-4" data-lang="TITOLO">SquareBox!</h1>
-            <p data-lang="DESC_BREVE">Sai contare fino a 100?&nbsp;Completa lo SquareBox!</p>
-            <p data-lang="INTRO">Clicca su una casella per cominciare e poi continua saltando due caselle per muoverti in orizzontale o verticale e saltandone una per muoverti in diagonale!</p>
-         </div>
+          <h1 class="display-4" data-lang="TITOLO">SquareBox!</h1>
+          <p data-lang="DESC_BREVE">Sai contare fino a 100?&nbsp;Completa lo SquareBox!</p>
+          <p data-lang="INTRO">Clicca su una casella per cominciare e poi continua saltando due caselle per muoverti in orizzontale o verticale e saltandone una per muoverti in diagonale!</p>
       </div>
       <div class="container">
-         <div id="gameConteiner" class="col-xs-1"></div>
-         <a class="col btn btn-secondary btn-lg sidebtn" href="javascript:undo()" role="button" data-lang="ANNULLA">Annulla</a> <a class="col btn btn-info btn-lg sidebtn" href="javascript:buidSchema()" role="button" data-lang="RESTART">Nuova partita</a> 
-         <div class="form-group">
+         <div id="gameConteiner" class="col-md-6 col-12"></div>
+         <div class="row">
+          <a class="col btn btn-secondary btn-lg sidebtn  col-6 col-md-3" href="javascript:undo()" role="button" data-lang="ANNULLA">Annulla</a> 
+          <a class="col btn btn-info btn-lg sidebtn  col-6 col-md-3" href="javascript:buidSchema()" role="button" data-lang="RESTART">Nuova partita</a> 
+          <div class="form-group  col-6 col-md-3">
             <label class="col " for="algoritmo" data-lang="ALGO">Algoritmo:</label> 
             <select class="col " id="algoritmo" >
                <option value="1" data-lang="RANDOM">Muovi a caso</option>
@@ -79,16 +79,16 @@
                <option value="3" data-lang="ORIZONTAL">Segui delle tue preferenze</option>
                <option value="4" data-lang="DIAGONAL">Segui delle tue preferenze</option>
             </select>
-         </div>
-         <a class="col btn btn-info btn-lg sidebtn" href="javascript:autoSolve()" role="button" data-lang="AUTOSOLVE">Autorisolvi</a> 
-         <a class="col btn btn-primary btn-lg sidebtn endbutton" href="javascript:shareOnFacebook()" style="display: none" data-lang="SHARE_FB">Condividi su Facebook</a> 
-         <a class="col btn btn-primary btn-lg sidebtn endbutton" href="javascript:shareOnTwitter()" style="display: none" data-lang="SHARE_TW">Condividi su Twitter</a> 
-         <div class="row col-xs-12">
-            <hr>
-            <h3 data-lang="OPTIONS">Opzioni</h3>
-         </div>
+          </div>
+          <a class="col btn btn-info btn-lg sidebtn  col-6 col-md-3" href="javascript:autoSolve()" role="button" data-lang="AUTOSOLVE">Autorisolvi</a> 
+        </div>
+        <div class="row">
+          <a class="col btn btn-primary btn-lg sidebtn endbutton col-6" href="javascript:shareOnFacebook()" style="display: none" data-lang="SHARE_FB">Condividi su Facebook</a> 
+          <a class="col btn btn-primary btn-lg sidebtn endbutton col-6" href="javascript:shareOnTwitter()" style="display: none" data-lang="SHARE_TW">Condividi su Twitter</a> 
+        </div>
+        <hr>
+        <h3 data-lang="OPTIONS">Opzioni</h3>
          <div class="row">
-
             <form onsubmit="buidSchema();return false;">
                <div class="form-group row">
                   <label for="example-text-input" class="col-md-4 col-xs-12 col-form-label" data-lang="AUTOCOMPLETE">Completa automaticamente quando è possibile una sola mossa</label> 
@@ -101,7 +101,7 @@
                <div class="form-group row">
                   <label for="numColonne" class="col-md-4 col-xs-12 col-form-label" data-lang="NUMB_COLUM">Numero di colonne</label> 
                   <div class="col-md-8 col-xs-12"> <input class="form-control" type="number" value="10" id="numColonne"> </div>
-               </div>
+               </div>               
                <input style="display:none" type="submit"> 
             </form>
          </div>
@@ -110,7 +110,7 @@
             <p><a href="https://github.com/migius/SquareBox" target="_blank">documentation & source</a></p>
          </footer>
       </div>
-      
+
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
