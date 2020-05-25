@@ -4,7 +4,7 @@ A magical game, fill the SquareBox!
 ## Start to play
 https://migius.github.io/SquareBox/
 
-## old version:
+#### old version:
 https://migio.altervista.org/squarebox/
 
 ## Rules
