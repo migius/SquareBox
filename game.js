@@ -170,7 +170,7 @@ var autoSolve = function()
     var algoritmo = $("#algoritmo")[0].value;
 
     if(lastId == "NULL") {
-        alert("Select first cell");
+        alert(dictionary[curr_language]["SELECTALG"]);
         return;
     }
 
@@ -258,7 +258,11 @@ var autoSolve = function()
 var fineDelGioco = function()
 {
     "use strict";
-    var frase = "Complimenti! Hai raggiunto un punteggio di " + value + " su " + (numRighe * numColonne) + " (" + numRighe + "x" + numColonne + ") a SquareBox!";
+    var frase = dictionary[curr_language]["FRASE_FINE"]
+            .replace("{value}", value)
+            .replace("{maxValue}", (numRighe * numColonne))
+            .replace("{numR}", numRighe)
+            .replace("{numC}", numColonne);
 
     $("#winPhrase").text(frase);
 
@@ -279,7 +283,7 @@ var shareOnFacebook = function()
 var shareOnTwitter = function()
 {
     "use strict";
-    var href = "https://twitter.com/share?" + "url=https%3A%2F%2Fmigio.github.io%2FSquareBox%3Fr%3D" + numRighe + "%26c%3D" + numColonne + "%26l%3D" + curr_language + "&via=brunimichele&" + "hashtags=SquareBox&" + "text=" + "Ho raggiunto un punteggio di " + value + " su " + (numRighe * numColonne) + " (" + numRighe + "x" + numColonne + ") a SquareBox!";
+    var href = "https://twitter.com/share?" + "url=https%3A%2F%2Fmigius.github.io%2FSquareBox%3Fr%3D" + numRighe + "%26c%3D" + numColonne + "%26l%3D" + curr_language + "&via=brunimichele&" + "hashtags=SquareBox&" + "text=" + "Ho raggiunto un punteggio di " + value + " su " + (numRighe * numColonne) + " (" + numRighe + "x" + numColonne + ") a SquareBox!";
     window.open(href, "Share on Twitter");
 };
 
@@ -304,7 +308,7 @@ var buidSchema = function()
         for (var c = 1; c <= numColonne; c++)
         {
             var divButton = document.createElement("button");
-            divButton.setAttribute("class", "btn btn-primary");
+            divButton.setAttribute("class", "btn btn-primary game-cell");
             divButton.setAttribute("type", "button");
             divButton.setAttribute("onclick", "select(this.id)");
             divButton.setAttribute("id", "button_" + r + "_" + c);
@@ -538,7 +542,9 @@ var createEvents = function()
         	            $("#" + vettoreConsentiti[6]).click();
 	                }
                     break;
-    	        default: return; // exit this handler for other keys
+    	        default: 
+                    //alert(JSON.stringify(e));
+                    return; // exit this handler for other keys
 	        }
         }
         e.preventDefault(); // prevent the default action (scroll / move caret)
@@ -552,8 +558,7 @@ $(document).ready(function()
     buidSchema();
     createEvents();
 
-    $.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57e01bac2b06a85e", function()
-    {});
+    //$.getScript("//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57e01bac2b06a85e", function() {});
 
 });
 
@@ -601,6 +606,7 @@ dictionary.it_IT.NO_CENTER = "Lontano dal centro";
 dictionary.it_IT.ORIZONTAL = "Preferisci in orizzontale";
 dictionary.it_IT.DIAGONAL = "Preferisci in diagonale";
 dictionary.it_IT.ALGO = "Algoritmo";
+dictionary.it_IT.SELECTALG = "Segli la cella iniziale";
 
 dictionary.en_US = {};
 dictionary.en_US.TITOLO = "SquareBox!";
@@ -625,6 +631,7 @@ dictionary.en_US.NO_CENTER = "Away from the center";
 dictionary.en_US.ORIZONTAL = "Prefer horizontal";
 dictionary.en_US.DIAGONAL = "Prefer diagonal";
 dictionary.en_US.ALGO = "Algorithm";
+dictionary.en_US.SELECTALG = "Select the first cell";
 
 dictionary.es_ES = {};
 dictionary.es_ES.TITOLO = "SquareBox!";
@@ -649,3 +656,4 @@ dictionary.es_ES.NO_CENTER = "Lejos del centro";
 dictionary.es_ES.ORIZONTAL = "Prefiero horizontal";
 dictionary.es_ES.DIAGONAL = "Prefiere diagonal";
 dictionary.es_ES.ALGO = "Algoritmo";
+dictionary.es_ES.SELECTALG = "Seleccione la primera celda";

@@ -1,12 +1,19 @@
-/*
-.bnt.btn-info,
-.btn.btn-alert,
-.btn.btn-primary,
-.btn.btn-success,
-.btn.btn-warning {
-  border-color: #fff
+
+.game-cell.btn-secondary {
+  background-color: #eee;
 }
 
+.game-cell.btn-success, .game-cell.btn-secondary, .game-cell.btn-danger, .game-cell.btn-primary {
+  border-radius: 0px;
+  border: 1px white solid;
+}
+
+button.btn.col-xs-12.col-sm-6.col-lg-3, a.btn-lg {
+  border: 1px white solid;
+  border-radius: 0px;
+}
+
+/*
 #gameConteiner {
   z-index: 10;
   margin-bottom: 20px;

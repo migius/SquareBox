@@ -1,3 +1,6 @@
+![GitHub](https://img.shields.io/github/license/migius/SquareBox)
+![GitHub last commit](https://img.shields.io/github/last-commit/migius/SquareBox)
+
 # SquareBox
 A magical game, fill the SquareBox!
 

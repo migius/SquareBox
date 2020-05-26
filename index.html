@@ -28,33 +28,35 @@
       <meta property="og:site_name" content="migius"/>
       <meta property="og:author" content="migius"/>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link href="style.css" rel="stylesheet">
+      <link href="style.css?v=20200526d" rel="stylesheet">
    </head>
    <body>
       <div class="modal fade bd-example-modal-lg" id="ModalVictory">
          <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                <div class="modal-header">
+                  <h4 class="modal-title" data-lang="GAME_OVER">Game over!</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
                     <span aria-hidden="true">&times;</span> 
                   </button> 
-                  <h4 class="modal-title" data-lang="GAME_OVER">Game over!</h4>
                </div>
                <div class="modal-body">
                   <p id="winPhrase"></p>
                </div>
                <div class="modal-footer"> 
-                <button type="button" class="btn btn-secondary col-xs-12 col-sm-6 col-lg-3 " data-dismiss="modal" data-lang="CHIUDI">Chiudi</button> 
-                <button type="button" class="btn btn-info col-xs-12 col-sm-6 col-lg-3" onclick="javascript:buidSchema();$('#ModalVictory').modal('hide')" role="button" data-lang="RESTART">Nuova partita</button> 
-                <button type="button" class="btn btn-primary col-xs-12 col-sm-6 col-lg-3" onclick="javascript:shareOnFacebook();$('#ModalVictory').modal('hide')" data-lang="SHARE_FB">Condividi su Facebook</button> 
-                <button type="button" class="btn btn-primary col-xs-12 col-sm-6 col-lg-3" onclick="javascript:shareOnTwitter();$('#ModalVictory').modal('hide')" data-lang="SHARE_TW">Condividi su Twitter</button> 
+                <div class="row"> 
+                  <button type="button" class="btn btn-secondary col-xs-12 col-sm-6 col-lg-3 " data-dismiss="modal" data-lang="CHIUDI">Chiudi</button> 
+                  <button type="button" class="btn btn-info col-xs-12 col-sm-6 col-lg-3" onclick="javascript:buidSchema();$('#ModalVictory').modal('hide')" role="button" data-lang="RESTART">Nuova partita</button> 
+                  <button type="button" class="btn btn-primary col-xs-12 col-sm-6 col-lg-3" onclick="javascript:shareOnFacebook();$('#ModalVictory').modal('hide')" data-lang="SHARE_FB">Condividi su Facebook</button> 
+                  <button type="button" class="btn btn-primary col-xs-12 col-sm-6 col-lg-3" onclick="javascript:shareOnTwitter();$('#ModalVictory').modal('hide')" data-lang="SHARE_TW">Condividi su Twitter</button> 
+                </div>
               </div>
             </div>
          </div>
       </div>
-      <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+      <nav class="navbar navbar-static-top bg-inverse">
          <a class="navbar-brand" href=/>migius</a>  
-         <ul class="nav navbar-nav" style="float: right;">
+         <ul class="nav" >
             <li class="nav-item" data-lang-selector="it_IT"> <a class="nav-link" href="javascript:setLanguage('it_IT')" >IT</a> </li>
             <li class="nav-item" data-lang-selector="en_US"> <a class="nav-link" href="javascript:setLanguage('en_US')" >EN</a> </li>
             <!-- <li class="nav-item" data-lang-selector="fr_FR"> <a class="nav-link" href="javascript:setLanguage('fr_FR')" >FR</a> </li>--> 
@@ -67,41 +69,41 @@
           <p data-lang="INTRO">Clicca su una casella per cominciare e poi continua saltando due caselle per muoverti in orizzontale o verticale e saltandone una per muoverti in diagonale!</p>
       </div>
       <div class="container">
-         <div id="gameConteiner" class="col-md-6 col-12"></div>
+         <div id="gameConteiner" class="col-md-6 col-12 mb-4"></div>
          <div class="row">
-          <a class="col btn btn-secondary btn-lg sidebtn  col-6 col-md-3" href="javascript:undo()" role="button" data-lang="ANNULLA">Annulla</a> 
-          <a class="col btn btn-info btn-lg sidebtn  col-6 col-md-3" href="javascript:buidSchema()" role="button" data-lang="RESTART">Nuova partita</a> 
-          <div class="form-group  col-6 col-md-3">
-            <label class="col " for="algoritmo" data-lang="ALGO">Algoritmo:</label> 
-            <select class="col " id="algoritmo" >
-               <option value="1" data-lang="RANDOM">Muovi a caso</option>
-               <option value="2" data-lang="NO_CENTER">Stai lontano dal centro</option>
-               <option value="3" data-lang="ORIZONTAL">Segui delle tue preferenze</option>
-               <option value="4" data-lang="DIAGONAL">Segui delle tue preferenze</option>
-            </select>
-          </div>
-          <a class="col btn btn-info btn-lg sidebtn  col-6 col-md-3" href="javascript:autoSolve()" role="button" data-lang="AUTOSOLVE">Autorisolvi</a> 
+          <a class="btn btn-success btn-lg col-12 col-sm-4" href="javascript:buidSchema()" role="button" data-lang="RESTART">Nuova partita</a> 
+          <a class="btn btn-secondary btn-lg col-6 col-sm-4" href="javascript:undo()" role="button" data-lang="ANNULLA">Annulla</a> 
+          <a class="btn btn-info btn-lg sidebtn  col-6 col-sm-4" href="javascript:autoSolve()" role="button" data-lang="AUTOSOLVE">Autorisolvi</a> 
         </div>
         <div class="row">
-          <a class="col btn btn-primary btn-lg sidebtn endbutton col-6" href="javascript:shareOnFacebook()" style="display: none" data-lang="SHARE_FB">Condividi su Facebook</a> 
-          <a class="col btn btn-primary btn-lg sidebtn endbutton col-6" href="javascript:shareOnTwitter()" style="display: none" data-lang="SHARE_TW">Condividi su Twitter</a> 
+          <a class="btn btn-primary btn-lg endbutton col-6" href="javascript:shareOnFacebook()" style="display: none" data-lang="SHARE_FB">Condividi su Facebook</a> 
+          <a class="btn btn-primary btn-lg endbutton col-6" href="javascript:shareOnTwitter()" style="display: none" data-lang="SHARE_TW">Condividi su Twitter</a> 
         </div>
         <hr>
         <h3 data-lang="OPTIONS">Opzioni</h3>
          <div class="row">
             <form onsubmit="buidSchema();return false;">
-               <div class="form-group row">
+              <div class="form-group row">
                   <label for="example-text-input" class="col-md-4 col-xs-12 col-form-label" data-lang="AUTOCOMPLETE">Completa automaticamente quando è possibile una sola mossa</label> 
                   <div class="col-md-8 col-xs-12"> <input class="form-check-input" id="Autocomplete" type="checkbox" style="margin-left: 5px;zoom: 200%;" > </div>
-               </div>
-               <div class="form-group row">
+              </div>
+              <div class="form-group row">
                   <label for="numRighe" class="col-md-4 col-xs-12 col-form-label" data-lang="NUMB_ROWS">Numero di righe</label> 
                   <div class="col-md-8 col-xs-12"> <input class="form-control" type="number" value="10" id="numRighe"> </div>
-               </div>
-               <div class="form-group row">
+              </div>
+              <div class="form-group row">
                   <label for="numColonne" class="col-md-4 col-xs-12 col-form-label" data-lang="NUMB_COLUM">Numero di colonne</label> 
                   <div class="col-md-8 col-xs-12"> <input class="form-control" type="number" value="10" id="numColonne"> </div>
-               </div>               
+              </div>       
+              <div class="form-group row">
+                <label class="col-md-4 col-xs-12 col-form-label" for="algoritmo" data-lang="ALGO">Algoritmo usato da autorisolvi:</label>
+                <select class="col-md-8 col-xs-12 form-control" id="algoritmo" >
+                   <option value="1" data-lang="RANDOM">Muovi a caso</option>
+                   <option value="2" data-lang="NO_CENTER">Stai lontano dal centro</option>
+                   <option value="3" data-lang="ORIZONTAL">Segui delle tue preferenze</option>
+                   <option value="4" data-lang="DIAGONAL">Segui delle tue preferenze</option>
+                </select>
+              </div>        
                <input style="display:none" type="submit"> 
             </form>
          </div>
@@ -114,7 +116,7 @@
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <script src="game.js"></script> 
+      <script src="game.js?v=20200526c"></script> 
 
    </body>
 </html>
