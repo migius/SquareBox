@@ -546,8 +546,8 @@ var createEvents = function()
                     //alert(JSON.stringify(e));
                     return; // exit this handler for other keys
 	        }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
         }
-        e.preventDefault(); // prevent the default action (scroll / move caret)
     });
 
 };
